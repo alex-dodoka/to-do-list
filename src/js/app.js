@@ -1,6 +1,8 @@
-function addNewTask(taskText) {
-    if (taskText !== "") {
-        const newElement = createTaskHtmlTag(newTaskDescription());
+function addNewTask() {
+    const getNewTaskDescription = $('input').val();
+
+    if (getNewTaskDescription !== "") {
+        let newElement = createTaskHtmlTag(getNewTaskDescription);
         createBtn(newElement);
         addElement(newElement);
         clearInput();
@@ -8,17 +10,13 @@ function addNewTask(taskText) {
     }
 }
 
-function newTaskDescription() {
-    const newTask = $('input').val();
-    return newTask;
-}
 
 function createBtn(newTask) {
-    return $(newTask).append('<button class="remove-task-tag btn small alert-danger">X</button>');
+    return $(newTask).append('<span class="remove-task-tag">X</span>');
 }
 
 function addElement(element) {
-    return $('#plase_for_task').append(element);
+     $('#plase_for_task').append(element);
 }
 
 function createTaskHtmlTag(taskText) {
@@ -26,11 +24,11 @@ function createTaskHtmlTag(taskText) {
 }
 
 function clearInput() {
-    return $('input').val("");
+    $('input').val("");
 }
 
 function removeTask() {
-    return $('.remove-task-tag').on('click', function () {
+    $('.remove-task-tag').on('click', function () {
         const parent = $(this).parent();
         $(parent).css('textDecoration', 'line-through');
         $('#plase_for_task').append($(parent));

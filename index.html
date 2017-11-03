@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <title>To do list</title>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="src/css/custom-style.css">
 </head>
 <body>
 
-<div id="main" class="container">
-    <input type="text" class="input-lg" placeholder="New Item">
+<div class="header">
+    <input type="text" class="" placeholder="New Item">
 
-    <button class="btn" onclick="addNewTask(newTaskDescription())">Add Item</button>
-
-    <ol id="plase_for_task"></ol>
-
+    <span class="addBtn" onclick="addNewTask()">Add Item</span>
 </div>
+
+<ol id="plase_for_task"></ol>
 
 
 <script src="bower_components/jquery/dist/jquery.js"></script>
